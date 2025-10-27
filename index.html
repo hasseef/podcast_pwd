@@ -9,8 +9,8 @@ export default function HomePage() {
     <div className="bg-[#f9f9f9] min-h-screen text-[#3f3a3f]">
       <header className="bg-[#714984] text-white py-8 px-4 text-center">
         <Image src="/logo.png" alt="شعار بودكاست ذوي الإعاقة" width={80} height={80} className="mx-auto mb-3" />
-        <h1 className="text-3xl font-bold">قصتي وصوتي</h1>
-        <p className="text-sm mt-2">منصة بودكاست وقصص مجتمعية لذوي الإعاقة</p>
+        <h1 className="text-3xl font-bold">بودكاست ذوي الإعاقة</h1>
+        <p className="text-sm mt-2">منصة ذو محتوى صوتي متخصص يعزز التمكين والوعي حول قضايا ذوي الإعاقة</p>
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-8">
@@ -68,6 +68,24 @@ export default function HomePage() {
             <Textarea placeholder="اكتب قصتك أو تجربتك مع الإعاقة..." rows={5} className="text-right" />
             <Button type="submit" className="bg-[#714984] text-white w-full">📨 إرسال القصة</Button>
           </form>
+        </section>
+
+        <section className="mb-16">
+          <h2 className="text-2xl font-semibold text-center text-[#523663] mb-6">🤝 الشراكات والرعاية</h2>
+          <Card className="max-w-3xl mx-auto">
+            <CardContent className="p-6 space-y-4">
+              <p className="text-gray-700 leading-relaxed">
+                ندعو المؤسسات والأفراد للمساهمة في دعم وتمكين ذوي الإعاقة من خلال رعاية الحلقات، دعم الإنتاج، أو الشراكة الإعلامية. يمكن تخصيص التعاون بما يتناسب مع أهداف الجهة.
+              </p>
+              <p className="text-sm text-[#714984] font-semibold">مزايا الرعاية:</p>
+              <ul className="list-disc text-sm ps-6 text-gray-600">
+                <li>ذكر الراعي في مقدمة ونهاية الحلقات</li>
+                <li>شعار الراعي في موقع البودكاست وصفحاته</li>
+                <li>فرص التفاعل مع المستمعين عبر الحملات المشتركة</li>
+              </ul>
+              <Button className="bg-[#bc9c5b] hover:bg-[#a7854e] text-white w-full">📩 تقدم بطلب شراكة</Button>
+            </CardContent>
+          </Card>
         </section>
       </main>
 
