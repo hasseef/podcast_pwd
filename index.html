@@ -1,131 +1,105 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>بودكاست ذوي الإعاقة</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
-  <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background-color: #f5f6fa;
-      color: #3f3a3f;
-    }
-    header {
-      background-color: #714984;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header img {
-      max-height: 80px;
-      margin-bottom: 1rem;
-    }
-    footer {
-      background-color: #3f3a3f;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .btn-gold {
-      background-color: #bc9c5b;
-      color: white;
-    }
-    .section-title {
-      border-right: 6px solid #bc9c5b;
-      padding-right: .75rem;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-    .episode-card, .testimonial {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      padding: 1rem;
-      margin-bottom: 1rem;
-    }
-    .testimonial small {
-      color: #714984;
-      font-weight: 600;
-    }
-    .form-control, .btn {
-      border-radius: 0.5rem;
-    }
-    main {
-      padding-bottom: 3rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="logo.png" alt="شعار بودكاست ذوي الإعاقة">
-    <h1>بودكاست ذوي الإعاقة</h1>
-    <p>منصة تمكين وتعليم وتوعية حول قضايا الإعاقة في السعودية</p>
-  </header>
+import { useState } from 'react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Play, Hand } from 'lucide-react';
+import Image from "next/image";
 
-  <main class="container mt-4">
-    <section id="about">
-      <h2 class="section-title">عن البودكاست</h2>
-      <p>بودكاست متخصص يعرض التحديات والفرص التي تواجه الأشخاص ذوي الإعاقة في السعودية، ويدعم مستهدفات رؤية 2030 من خلال التمكين وإشراك المجتمع.</p>
-    </section>
+const episodes = [
+  {
+    id: 1,
+    title: "التعليم الشامل",
+    guest: "د. محمد القحطاني",
+    tags: ["التعليم", "التمكين"],
+    videoUrl: "https://www.youtube.com/embed/sample1",
+    signLangUrl: "https://www.youtube.com/embed/sample1_signlang",
+    summary: "نقاش حول تحديات التعليم الشامل لذوي الإعاقة."
+  },
+  {
+    id: 2,
+    title: "الحقوق القانونية",
+    guest: "أ. سارة العتيبي",
+    tags: ["القانون", "الدمج"],
+    videoUrl: "https://www.youtube.com/embed/sample2",
+    signLangUrl: "https://www.youtube.com/embed/sample2_signlang",
+    summary: "مقدمة حول حقوق ذوي الإعاقة في الأنظمة السعودية."
+  }
+];
 
-    <section id="episodes">
-      <h2 class="section-title">الحلقات</h2>
-      <div class="episode-card">
-        <h5>الحلقة 1: التعليم الشامل</h5>
-        <p>نقاش حول واقع التعليم لذوي الإعاقة والتحديات والفرص فيه.</p>
-        <a href="#" class="btn btn-gold">استمع الآن</a>
+export default function PodcastDynamicUI() {
+  const [selectedEpisode, setSelectedEpisode] = useState(episodes[0]);
+  const [showSignLang, setShowSignLang] = useState(false);
+
+  return (
+    <div className="max-w-6xl mx-auto px-4 py-6">
+      <div className="text-center mb-8">
+        <Image src="/logo.png" alt="شعار بودكاست ذوي الإعاقة" width={90} height={90} className="mx-auto mb-3" />
+        <h1 className="text-4xl font-bold text-[#714984]">بودكاست ذوي الإعاقة</h1>
+        <p className="text-sm text-gray-600 mt-2">منصة تمكين وتوعية للمجتمع السعودي</p>
       </div>
-      <div class="episode-card">
-        <h5>الحلقة 2: الوصول للعدالة</h5>
-        <p>كيف تضمن الأنظمة السعودية حقوق ذوي الإعاقة؟</p>
-        <a href="#" class="btn btn-gold">استمع الآن</a>
-      </div>
-    </section>
 
-    <section id="testimonials">
-      <h2 class="section-title">آراء الجمهور</h2>
-      <div class="testimonial">
-        <p>"البودكاست فتح لي آفاقًا جديدة حول قضايا الإعاقة. ممتنة جدًا لهذا المحتوى!"</p>
-        <small>- فاطمة، جدة</small>
-      </div>
-      <div class="testimonial">
-        <p>"تجربتي كضيف في البرنامج كانت ملهمة. أشكركم على تسليط الضوء على قصصنا."</p>
-        <small>- عبدالله، الرياض</small>
-      </div>
-    </section>
+      <Tabs defaultValue="list" className="w-full">
+        <TabsList className="flex justify-center mb-6 gap-2">
+          <TabsTrigger value="list">📋 قائمة الحلقات</TabsTrigger>
+          <TabsTrigger value="watch">🎥 مشاهدة</TabsTrigger>
+          <TabsTrigger value="share">💬 شارك رأيك</TabsTrigger>
+        </TabsList>
 
-    <section id="partners">
-      <h2 class="section-title">الشراكات والرعاية</h2>
-      <p>ندعو المؤسسات والأفراد لدعم رسالتنا النبيلة من خلال الرعاية أو الشراكة الاستراتيجية. نؤمن أن التعاون يصنع التغيير.</p>
-      <a href="#contact" class="btn btn-secondary">راسلنا</a>
-    </section>
+        <TabsContent value="list">
+          <div className="grid gap-6 md:grid-cols-2">
+            {episodes.map((ep) => (
+              <Card key={ep.id} className="cursor-pointer hover:shadow-lg transition" onClick={() => { setSelectedEpisode(ep); setShowSignLang(false); }}>
+                <CardContent className="p-5">
+                  <h2 className="text-2xl font-semibold text-[#523663] mb-1">{ep.title}</h2>
+                  <p className="text-sm text-gray-700">ضيف الحلقة: {ep.guest}</p>
+                  <p className="mt-2 text-sm text-gray-600">{ep.summary}</p>
+                  <div className="mt-3 flex gap-2 flex-wrap">
+                    {ep.tags.map(tag => (
+                      <span key={tag} className="bg-[#bc9c5b] text-white px-3 py-1 text-xs rounded-full">{tag}</span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </TabsContent>
 
-    <section id="contact">
-      <h2 class="section-title">تواصل معنا</h2>
-      <form>
-        <div class="mb-3">
-          <label class="form-label">الاسم الكامل</label>
-          <input type="text" class="form-control" placeholder="اكتب اسمك هنا">
-        </div>
-        <div class="mb-3">
-          <label class="form-label">البريد الإلكتروني</label>
-          <input type="email" class="form-control" placeholder="example@email.com">
-        </div>
-        <div class="mb-3">
-          <label class="form-label">رسالتك</label>
-          <textarea class="form-control" rows="4" placeholder="اكتب رسالتك أو استفسارك"></textarea>
-        </div>
-        <button type="submit" class="btn btn-gold">إرسال</button>
-      </form>
-    </section>
-  </main>
+        <TabsContent value="watch">
+          <div className="bg-white rounded-xl shadow-md p-5">
+            <h2 className="text-2xl font-semibold text-[#714984] mb-3">{selectedEpisode.title}</h2>
+            <p className="text-sm text-gray-700 mb-4">ضيف الحلقة: {selectedEpisode.guest}</p>
+            <div className="mb-4 flex flex-wrap gap-3">
+              <Button variant="outline" onClick={() => setShowSignLang(false)} className={showSignLang ? '' : 'bg-[#714984] text-white'}>
+                🎧 عرض الحلقة العادية
+              </Button>
+              <Button variant="outline" onClick={() => setShowSignLang(true)} className={showSignLang ? 'bg-[#523663] text-white' : ''}>
+                🧏‍♂️ لغة الإشارة
+              </Button>
+            </div>
+            <div className="aspect-video">
+              <iframe
+                src={showSignLang ? selectedEpisode.signLangUrl : selectedEpisode.videoUrl}
+                title="مشغل الحلقة"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full rounded"
+              ></iframe>
+            </div>
+          </div>
+        </TabsContent>
 
-  <footer>
-    <p>© جميع الحقوق محفوظة لبودكاست ذوي الإعاقة 2025</p>
-    <p>تابعونا عبر: تويتر | إنستغرام | يوتيوب</p>
-  </footer>
-</body>
-</html>
+        <TabsContent value="share">
+          <form className="space-y-5 bg-white p-6 rounded-xl shadow">
+            <Input placeholder="اسمك الكامل" className="text-right" />
+            <Input placeholder="بريدك الإلكتروني (اختياري)" className="text-right" />
+            <Textarea placeholder="ما رأيك في الحلقات؟ أو اقترح موضوعًا جديدًا..." rows={5} className="text-right" />
+            <Button className="bg-[#bc9c5b] hover:bg-[#a7854e] text-white w-full">📨 إرسال</Button>
+          </form>
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+}
