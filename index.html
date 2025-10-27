@@ -4,88 +4,122 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>بودكاست ذوي الإعاقة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background-color: #f9f9f9;
+      background-color: #f5f6fa;
+      color: #3f3a3f;
     }
     header {
       background-color: #714984;
       color: white;
-      padding: 1rem;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header img {
+      max-height: 80px;
+      margin-bottom: 1rem;
     }
     footer {
       background-color: #3f3a3f;
       color: white;
       padding: 1rem;
       text-align: center;
+      margin-top: 3rem;
     }
     .btn-gold {
       background-color: #bc9c5b;
       color: white;
     }
-    .episode-card {
+    .section-title {
+      border-right: 6px solid #bc9c5b;
+      padding-right: .75rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .episode-card, .testimonial {
       background: white;
-      border: 1px solid #ddd;
       border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
       padding: 1rem;
       margin-bottom: 1rem;
     }
-    .section-title {
-      border-right: 6px solid #bc9c5b;
-      padding-right: .5rem;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
+    .testimonial small {
+      color: #714984;
+      font-weight: 600;
+    }
+    .form-control, .btn {
+      border-radius: 0.5rem;
+    }
+    main {
+      padding-bottom: 3rem;
     }
   </style>
 </head>
 <body>
-  <header class="text-center">
+  <header>
+    <img src="logo.png" alt="شعار بودكاست ذوي الإعاقة">
     <h1>بودكاست ذوي الإعاقة</h1>
-    <p>منصة تمكين وتعليم وتوعية للمجتمع حول قضايا ذوي الإعاقة</p>
+    <p>منصة تمكين وتعليم وتوعية حول قضايا الإعاقة في السعودية</p>
   </header>
 
   <main class="container mt-4">
     <section id="about">
       <h2 class="section-title">عن البودكاست</h2>
-      <p>بودكاست يسلط الضوء على التحديات والحلول لقضايا ذوي الإعاقة، ويدعم رؤية المملكة 2030 عبر تمكين هذه الفئة وتعزيز الوعي المجتمعي.</p>
+      <p>بودكاست متخصص يعرض التحديات والفرص التي تواجه الأشخاص ذوي الإعاقة في السعودية، ويدعم مستهدفات رؤية 2030 من خلال التمكين وإشراك المجتمع.</p>
     </section>
 
     <section id="episodes">
       <h2 class="section-title">الحلقات</h2>
       <div class="episode-card">
         <h5>الحلقة 1: التعليم الشامل</h5>
-        <p>مناقشة التحديات والحلول في بيئة التعليم لذوي الإعاقة.</p>
+        <p>نقاش حول واقع التعليم لذوي الإعاقة والتحديات والفرص فيه.</p>
         <a href="#" class="btn btn-gold">استمع الآن</a>
       </div>
       <div class="episode-card">
         <h5>الحلقة 2: الوصول للعدالة</h5>
-        <p>حقوق ذوي الإعاقة في النظام القضائي وآليات الدعم.</p>
+        <p>كيف تضمن الأنظمة السعودية حقوق ذوي الإعاقة؟</p>
         <a href="#" class="btn btn-gold">استمع الآن</a>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <h2 class="section-title">آراء الجمهور</h2>
+      <div class="testimonial">
+        <p>"البودكاست فتح لي آفاقًا جديدة حول قضايا الإعاقة. ممتنة جدًا لهذا المحتوى!"</p>
+        <small>- فاطمة، جدة</small>
+      </div>
+      <div class="testimonial">
+        <p>"تجربتي كضيف في البرنامج كانت ملهمة. أشكركم على تسليط الضوء على قصصنا."</p>
+        <small>- عبدالله، الرياض</small>
       </div>
     </section>
 
     <section id="partners">
       <h2 class="section-title">الشراكات والرعاية</h2>
-      <p>ندعوكم للمساهمة في دعم رسالتنا من خلال شراكات تمويلية أو تقنية أو تسويقية. تواصلوا معنا لمعرفة التفاصيل.</p>
-      <a href="#contact" class="btn btn-secondary">تواصل معنا</a>
+      <p>ندعو المؤسسات والأفراد لدعم رسالتنا النبيلة من خلال الرعاية أو الشراكة الاستراتيجية. نؤمن أن التعاون يصنع التغيير.</p>
+      <a href="#contact" class="btn btn-secondary">راسلنا</a>
     </section>
 
     <section id="contact">
       <h2 class="section-title">تواصل معنا</h2>
       <form>
         <div class="mb-3">
-          <label class="form-label">الاسم</label>
-          <input type="text" class="form-control">
+          <label class="form-label">الاسم الكامل</label>
+          <input type="text" class="form-control" placeholder="اكتب اسمك هنا">
         </div>
         <div class="mb-3">
           <label class="form-label">البريد الإلكتروني</label>
-          <input type="email" class="form-control">
+          <input type="email" class="form-control" placeholder="example@email.com">
         </div>
         <div class="mb-3">
-          <label class="form-label">الرسالة</label>
-          <textarea class="form-control"></textarea>
+          <label class="form-label">رسالتك</label>
+          <textarea class="form-control" rows="4" placeholder="اكتب رسالتك أو استفسارك"></textarea>
         </div>
         <button type="submit" class="btn btn-gold">إرسال</button>
       </form>
@@ -94,7 +128,7 @@
 
   <footer>
     <p>© جميع الحقوق محفوظة لبودكاست ذوي الإعاقة 2025</p>
-    <p>تابعونا على: تويتر | إنستغرام | يوتيوب</p>
+    <p>تابعونا عبر: تويتر | إنستغرام | يوتيوب</p>
   </footer>
 </body>
 </html>
