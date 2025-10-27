@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>بودكاست ذوي الإعاقة</title>
@@ -63,18 +62,25 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg sticky-top shadow">
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow" style="background: linear-gradient(to left, #714984, #523663);">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="episode.html">بودكاست ذوي الإعاقة</a>
-    <ul class="navbar-nav me-auto">
-      <li class="nav-item"><a href="#episodes" class="nav-link">الحلقات</a></li>
-      <li class="nav-item"><a href="#stories" class="nav-link">قصص المجتمع</a></li>
-      <li class="nav-item"><a href="#resources" class="nav-link">الموارد</a></li>
-      <li class="nav-item"><a href="#partners" class="nav-link">الشراكات</a></li>
-      <li class="nav-item"><a href="#contact" class="nav-link">تواصل معنا</a></li>
-    </ul>
+    <a class="navbar-brand fw-bold" href="#">بودكاست ذوي الإعاقة</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a href="#episodes" class="nav-link">الحلقات</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">من نحن</a></li>
+        <li class="nav-item"><a href="#vision" class="nav-link">رؤية 2030</a></li>
+        <li class="nav-item"><a href="partners.html" class="nav-link">الرعاة</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">تواصل معنا</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
+
 
 <section class="hero">
   <img src="logo.png" alt="شعار بودكاست" />
@@ -95,7 +101,7 @@
           <div class="ratio ratio-16x9 mb-2">
             <iframe src="https://www.youtube.com/embed/sample1" allowfullscreen></iframe>
           </div>
-          <a href="episode.html" class="btn btn-main w-100">استمع الآن</a>
+          <a href="#" class="btn btn-main w-100">استمع الآن</a>
         </div>
       </div>
       <div class="col-md-6">
@@ -105,7 +111,7 @@
           <div class="ratio ratio-16x9 mb-2">
             <iframe src="https://www.youtube.com/embed/sample2" allowfullscreen></iframe>
           </div>
-          <a href="episode.html" class="btn btn-main w-100">استمع الآن</a>
+          <a href="#" class="btn btn-main w-100">استمع الآن</a>
         </div>
       </div>
     </div>
@@ -175,39 +181,6 @@
     </form>
   </section>
 
-
-<section id="about" class="mt-5">
-  <h2 class="section-title">📖 من نحن</h2>
-  <div class="feature-box">
-    <p>بودكاست ذوي الإعاقة هو أحد المشاريع التوعوية التابعة لمبادرة "تلبية"، يهدف إلى تمكين صوت الأشخاص ذوي الإعاقة وتعزيز وعي المجتمع بقضاياهم من خلال محتوى صوتي احترافي.</p>
-  </div>
-</section>
-
-<section id="vision" class="mt-5">
-  <h2 class="section-title">🎯 الارتباط برؤية 2030</h2>
-  <div class="feature-box">
-    <ul>
-      <li>✅ تمكين حياة عامرة وصحية</li>
-      <li>✅ رفع مشاركة الأشخاص ذوي الإعاقة في سوق العمل</li>
-      <li>✅ تعزيز المسؤولية الاجتماعية والعمل التطوعي</li>
-    </ul>
-  </div>
-</section>
-
-<section class="mt-5">
-  <h2 class="section-title">🧑‍💼 اقترح ضيفًا أو محاورًا</h2>
-  <form class="bg-white p-4 rounded shadow-sm">
-    <div class="mb-3">
-      <label class="form-label">اسمك الكامل</label>
-      <input type="text" class="form-control" placeholder="اسمك">
-    </div>
-    <div class="mb-3">
-      <label class="form-label">من الضيف أو المحور المقترح؟</label>
-      <textarea class="form-control" rows="4"></textarea>
-    </div>
-    <button class="btn btn-main w-100">إرسال الاقتراح</button>
-  </form>
-</section>
 </main>
 
 <footer>
