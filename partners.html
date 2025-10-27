@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>الرعاية والشراكة | بودكاست ذوي الإعاقة</title>
+  <title>الشراكات والرعاية | بودكاست ذوي الإعاقة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
   <style>
@@ -24,109 +24,56 @@
       padding: 2.5rem 1rem;
       text-align: center;
     }
-    .card {
+    .content-box {
+      background: white;
       border-radius: 1rem;
-      border: none;
-      box-shadow: 0 0 10px rgba(0,0,0,0.06);
-    }
-    .price {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: var(--accent-color);
-    }
-    footer {
-      background: var(--text-color);
-      color: white;
-      text-align: center;
       padding: 2rem;
-      margin-top: 3rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
     .btn-main {
       background-color: var(--accent-color);
       color: white;
+    }
+    footer {
+      background: var(--text-color);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="logo.png" alt="شعار بودكاست ذوي الإعاقة" class="mb-3" style="max-height: 90px; background: white; border-radius: 12px; padding: 0.3rem;" />
-  <h1 class="fw-bold">💼 باقات الرعاية</h1>
-  <p>ساهم معنا في تمكين الصوت وتعزيز التوعية من خلال رعاية حلقات بودكاست ذوي الإعاقة</p>
+  <h1 class="fw-bold">🤝 فرص الشراكة والرعاية</h1>
+  <p>كن جزءًا من التمكين المجتمعي لذوي الإعاقة عبر دعم صوتهم وإبداعهم</p>
 </header>
 
-<main class="container py-5">
+<main class="container my-5">
+  <div class="content-box">
+    <h4 class="mb-3">مزايا الشراكة:</h4>
+    <ul class="list-unstyled">
+      <li>📢 ذكر الراعي في مقدمة ونهاية الحلقات</li>
+      <li>📸 عرض الشعار في الموقع وصفحات التواصل</li>
+      <li>📊 تقارير أداء مخصصة للشركاء</li>
+      <li>🎯 حملات ترويجية مشتركة ومحتوى مخصص</li>
+    </ul>
 
-  <div class="row g-4 text-center">
-    <div class="col-md-4">
-      <div class="card p-4 h-100">
-        <h4 class="text-warning">🥉 برونزية</h4>
-        <p class="price">5,000 ر.س</p>
-        <ul class="list-unstyled text-start mt-3">
-          <li>– ذكر اسم الراعي في نهاية الحلقات</li>
-          <li>– إدراج الشعار في موقع الحلقات</li>
-        </ul>
-        <a href="#form" class="btn btn-outline-secondary mt-3">اختر هذه الباقة</a>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card p-4 h-100">
-        <h4 class="text-secondary">🥈 فضية</h4>
-        <p class="price">15,000 ر.س</p>
-        <ul class="list-unstyled text-start mt-3">
-          <li>– ظهور الشعار في كافة الحلقات</li>
-          <li>– إعلان صوتي مخصص بمدة 30 ثانية</li>
-          <li>– ترويج في وسائل التواصل</li>
-        </ul>
-        <a href="#form" class="btn btn-outline-secondary mt-3">اختر هذه الباقة</a>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card p-4 h-100">
-        <h4 class="text-gold">🥇 ذهبية</h4>
-        <p class="price">30,000 ر.س</p>
-        <ul class="list-unstyled text-start mt-3">
-          <li>– رعاية حصرية لحلقات مختارة</li>
-          <li>– ترويج بصري وصوتي وتفاعلي</li>
-          <li>– تقرير أداء شهري مفصل</li>
-        </ul>
-        <a href="#form" class="btn btn-outline-secondary mt-3">اختر هذه الباقة</a>
-      </div>
-    </div>
+    <h5 class="mt-4">أنواع الرعايات المتاحة:</h5>
+    <ul class="list-unstyled">
+      <li>🎙️ راعٍ لحلقة واحدة</li>
+      <li>📚 راعٍ لموسم كامل</li>
+      <li>💡 شراكة استراتيجية طويلة المدى</li>
+    </ul>
+
+    <p class="mt-4">فريقنا يرحب بمقترحات التعاون الإعلامي، المجتمعي أو التقني.</p>
+    <a href="contact.html" class="btn btn-main mt-3">📨 تواصل معنا للشراكة</a>
   </div>
-
-  <section id="form" class="mt-5">
-    <h4 class="mb-3">📩 قدم طلب الرعاية</h4>
-    <form class="bg-white p-4 rounded shadow-sm">
-      <div class="mb-3">
-        <label class="form-label">اسم الجهة</label>
-        <input type="text" class="form-control" placeholder="اسم الشركة / المؤسسة">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">الباقة المختارة</label>
-        <select class="form-select">
-          <option>برونزية</option>
-          <option>فضية</option>
-          <option>ذهبية</option>
-        </select>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">بيانات التواصل</label>
-        <input type="text" class="form-control" placeholder="بريد إلكتروني أو رقم هاتف">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">ملاحظات إضافية</label>
-        <textarea class="form-control" rows="3"></textarea>
-      </div>
-      <p class="text-muted small">سيتم التواصل عبر البريد لإرسال مسودة الاتفاقية الرقمية.</p>
-      <button class="btn btn-main w-100">إرسال الطلب</button>
-    </form>
-  </section>
-
 </main>
 
 <footer>
-  <p>© 2025 بودكاست ذوي الإعاقة | أحد المشاريع التوعوية لمبادرة تلبية</p>
+  <p>© 2025 بودكاست ذوي الإعاقة | جميع الحقوق محفوظة</p>
 </footer>
 
 </body>
