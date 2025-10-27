@@ -1,139 +1,95 @@
-import { useState } from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Hand } from 'lucide-react';
-import Image from "next/image";
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بودكاست ذوي الإعاقة</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" />
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #f9f9f9;
+      color: #3f3a3f;
+    }
+    header {
+      background-color: #714984;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header img {
+      max-height: 90px;
+      margin-bottom: 1rem;
+    }
+    .card {
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .btn-gold {
+      background-color: #bc9c5b;
+      color: white;
+    }
+    footer {
+      background-color: #3f3a3f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="شعار بودكاست ذوي الإعاقة" />
+    <h1 class="display-5">بودكاست ذوي الإعاقة</h1>
+    <p class="lead">منصة تمكين وتوعية للمجتمع السعودي</p>
+  </header>
 
-const episodes = [
-  {
-    id: 1,
-    title: "التعليم الشامل",
-    guest: "د. محمد القحطاني",
-    tags: ["التعليم", "التمكين"],
-    videoUrl: "https://www.youtube.com/embed/sample1",
-    signLangUrl: "https://www.youtube.com/embed/sample1_signlang",
-    summary: "نقاش حول تحديات التعليم الشامل لذوي الإعاقة."
-  },
-  {
-    id: 2,
-    title: "الحقوق القانونية",
-    guest: "أ. سارة العتيبي",
-    tags: ["القانون", "الدمج"],
-    videoUrl: "https://www.youtube.com/embed/sample2",
-    signLangUrl: "https://www.youtube.com/embed/sample2_signlang",
-    summary: "مقدمة حول حقوق ذوي الإعاقة في الأنظمة السعودية."
-  }
-];
-
-export default function PodcastDynamicUI() {
-  const [selectedEpisode, setSelectedEpisode] = useState(episodes[0]);
-  const [showSignLang, setShowSignLang] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    await fetch("https://api.sheetmonkey.io/form/your-form-id", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData)
-    });
-    alert("تم إرسال رأيك بنجاح. شكرًا لمشاركتك!");
-    setFormData({ name: '', email: '', message: '' });
-  };
-
-  return (
-    <div className="max-w-6xl mx-auto px-4 py-6">
-      <div className="text-center mb-8">
-        <Image src="/logo.png" alt="شعار بودكاست ذوي الإعاقة" width={90} height={90} className="mx-auto mb-3" />
-        <h1 className="text-4xl font-bold text-[#714984]">بودكاست ذوي الإعاقة</h1>
-        <p className="text-sm text-gray-600 mt-2">منصة تمكين وتوعية للمجتمع السعودي</p>
+  <main class="container py-5">
+    <section class="mb-5">
+      <h2 class="h4 mb-3">🎧 التعليم الشامل</h2>
+      <div class="card p-4 mb-3">
+        <p>ضيف الحلقة: د. محمد القحطاني</p>
+        <p class="text-muted">نقاش حول تحديات التعليم الشامل لذوي الإعاقة.</p>
+        <div class="ratio ratio-16x9 mb-2">
+          <iframe src="https://www.youtube.com/embed/sample1" allowfullscreen></iframe>
+        </div>
       </div>
+    </section>
 
-      <Tabs defaultValue="list" className="w-full">
-        <TabsList className="flex justify-center mb-6 gap-2">
-          <TabsTrigger value="list">📋 قائمة الحلقات</TabsTrigger>
-          <TabsTrigger value="watch">🎥 مشاهدة</TabsTrigger>
-          <TabsTrigger value="share">💬 شارك رأيك</TabsTrigger>
-        </TabsList>
+    <section class="mb-5">
+      <h2 class="h4 mb-3">📜 الحقوق القانونية</h2>
+      <div class="card p-4 mb-3">
+        <p>ضيف الحلقة: أ. سارة العتيبي</p>
+        <p class="text-muted">مقدمة حول حقوق ذوي الإعاقة في الأنظمة السعودية.</p>
+        <div class="ratio ratio-16x9 mb-2">
+          <iframe src="https://www.youtube.com/embed/sample2" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
 
-        <TabsContent value="list">
-          <div className="grid gap-6 md:grid-cols-2">
-            {episodes.map((ep) => (
-              <Card
-                key={ep.id}
-                className={`cursor-pointer hover:shadow-lg transition ${selectedEpisode.id === ep.id ? 'ring-2 ring-[#714984]' : ''}`}
-                onClick={() => { setSelectedEpisode(ep); setShowSignLang(false); }}
-              >
-                <CardContent className="p-5">
-                  <h2 className="text-2xl font-semibold text-[#523663] mb-1">{ep.title}</h2>
-                  <p className="text-sm text-gray-700">ضيف الحلقة: {ep.guest}</p>
-                  <p className="mt-2 text-sm text-gray-600">{ep.summary}</p>
-                  <div className="mt-3 flex gap-2 flex-wrap">
-                    {ep.tags.map(tag => (
-                      <span key={tag} className="bg-[#bc9c5b] text-white px-3 py-1 text-xs rounded-full">{tag}</span>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </TabsContent>
+    <section>
+      <h2 class="h4 mb-3">💬 شارك رأيك</h2>
+      <form class="bg-white p-4 rounded shadow-sm">
+        <div class="mb-3">
+          <label class="form-label">اسمك الكامل</label>
+          <input type="text" class="form-control" placeholder="مثال: محمد أحمد" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">بريدك الإلكتروني (اختياري)</label>
+          <input type="email" class="form-control" placeholder="example@email.com" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">رسالتك</label>
+          <textarea class="form-control" rows="4" placeholder="ما رأيك أو اقتراحك؟"></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold w-100">📨 إرسال</button>
+      </form>
+    </section>
+  </main>
 
-        <TabsContent value="watch">
-          <div className="bg-white rounded-xl shadow-md p-5">
-            <h2 className="text-2xl font-semibold text-[#714984] mb-3">{selectedEpisode.title}</h2>
-            <p className="text-sm text-gray-700 mb-4">ضيف الحلقة: {selectedEpisode.guest}</p>
-            <div className="mb-4 flex flex-wrap gap-3">
-              <Button variant="outline" onClick={() => setShowSignLang(false)} className={showSignLang ? '' : 'bg-[#714984] text-white'}>
-                🎧 عرض الحلقة العادية
-              </Button>
-              <Button variant="outline" onClick={() => setShowSignLang(true)} className={showSignLang ? 'bg-[#523663] text-white' : ''}>
-                🧏‍♂️ لغة الإشارة
-              </Button>
-            </div>
-            <div className="aspect-video">
-              <iframe
-                src={showSignLang ? selectedEpisode.signLangUrl : selectedEpisode.videoUrl}
-                title="مشغل الحلقة"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full rounded"
-                aria-label={`مشاهدة الحلقة: ${selectedEpisode.title}`}
-              ></iframe>
-            </div>
-            <p className="mt-4 text-sm text-gray-600 leading-relaxed">{selectedEpisode.summary}</p>
-          </div>
-        </TabsContent>
-
-        <TabsContent value="share">
-          <form className="space-y-5 bg-white p-6 rounded-xl shadow" onSubmit={handleSubmit}>
-            <Input
-              placeholder="اسمك الكامل"
-              className="text-right"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            />
-            <Input
-              placeholder="بريدك الإلكتروني (اختياري)"
-              className="text-right"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            />
-            <Textarea
-              placeholder="ما رأيك في الحلقات؟ أو اقترح موضوعًا جديدًا..."
-              rows={5}
-              className="text-right"
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            />
-            <Button type="submit" className="bg-[#bc9c5b] hover:bg-[#a7854e] text-white w-full">📨 إرسال</Button>
-          </form>
-        </TabsContent>
-      </Tabs>
-    </div>
-  );
-}
+  <footer>
+    <p>© جميع الحقوق محفوظة لبودكاست ذوي الإعاقة 2025</p>
+  </footer>
+</body>
+</html>
