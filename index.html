@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Play, Hand } from 'lucide-react';
+import { Hand } from 'lucide-react';
 import Image from "next/image";
 
 const episodes = [
@@ -31,6 +31,18 @@ const episodes = [
 export default function PodcastDynamicUI() {
   const [selectedEpisode, setSelectedEpisode] = useState(episodes[0]);
   const [showSignLang, setShowSignLang] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await fetch("https://api.sheetmonkey.io/form/your-form-id", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    });
+    alert("تم إرسال رأيك بنجاح. شكرًا لمشاركتك!");
+    setFormData({ name: '', email: '', message: '' });
+  };
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-6">
@@ -50,7 +62,11 @@ export default function PodcastDynamicUI() {
         <TabsContent value="list">
           <div className="grid gap-6 md:grid-cols-2">
             {episodes.map((ep) => (
-              <Card key={ep.id} className="cursor-pointer hover:shadow-lg transition" onClick={() => { setSelectedEpisode(ep); setShowSignLang(false); }}>
+              <Card
+                key={ep.id}
+                className={`cursor-pointer hover:shadow-lg transition ${selectedEpisode.id === ep.id ? 'ring-2 ring-[#714984]' : ''}`}
+                onClick={() => { setSelectedEpisode(ep); setShowSignLang(false); }}
+              >
                 <CardContent className="p-5">
                   <h2 className="text-2xl font-semibold text-[#523663] mb-1">{ep.title}</h2>
                   <p className="text-sm text-gray-700">ضيف الحلقة: {ep.guest}</p>
@@ -86,17 +102,35 @@ export default function PodcastDynamicUI() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full rounded"
+                aria-label={`مشاهدة الحلقة: ${selectedEpisode.title}`}
               ></iframe>
             </div>
+            <p className="mt-4 text-sm text-gray-600 leading-relaxed">{selectedEpisode.summary}</p>
           </div>
         </TabsContent>
 
         <TabsContent value="share">
-          <form className="space-y-5 bg-white p-6 rounded-xl shadow">
-            <Input placeholder="اسمك الكامل" className="text-right" />
-            <Input placeholder="بريدك الإلكتروني (اختياري)" className="text-right" />
-            <Textarea placeholder="ما رأيك في الحلقات؟ أو اقترح موضوعًا جديدًا..." rows={5} className="text-right" />
-            <Button className="bg-[#bc9c5b] hover:bg-[#a7854e] text-white w-full">📨 إرسال</Button>
+          <form className="space-y-5 bg-white p-6 rounded-xl shadow" onSubmit={handleSubmit}>
+            <Input
+              placeholder="اسمك الكامل"
+              className="text-right"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            />
+            <Input
+              placeholder="بريدك الإلكتروني (اختياري)"
+              className="text-right"
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            />
+            <Textarea
+              placeholder="ما رأيك في الحلقات؟ أو اقترح موضوعًا جديدًا..."
+              rows={5}
+              className="text-right"
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            />
+            <Button type="submit" className="bg-[#bc9c5b] hover:bg-[#a7854e] text-white w-full">📨 إرسال</Button>
           </form>
         </TabsContent>
       </Tabs>
