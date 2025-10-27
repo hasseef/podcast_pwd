@@ -62,25 +62,35 @@
 </head>
 <body>
 
-
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow" style="background: linear-gradient(to left, #714984, #523663);">
+<nav class="navbar navbar-expand-lg sticky-top shadow">
   <div class="container">
     <a class="navbar-brand fw-bold" href="#">بودكاست ذوي الإعاقة</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="mainNavbar">
+    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item"><a href="#episodes" class="nav-link">الحلقات</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link">من نحن</a></li>
-        <li class="nav-item"><a href="#vision" class="nav-link">رؤية 2030</a></li>
-        <li class="nav-item"><a href="partners.html" class="nav-link">الرعاة</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">تواصل معنا</a></li>
+        <li class="nav-item"><a href="#stories" class="nav-link">قصص المجتمع</a></li>
+        <li class="nav-item"><a href="#resources" class="nav-link">الموارد</a></li>
+        <li class="nav-item"><a href="#partners" class="nav-link">الشراكات</a></li>
+        <li class="nav-item"><a href="team.html" class="nav-link">فريق العمل</a></li>
+<li class="nav-item"><a href="#contact" class="nav-link">تواصل معنا</a></li>
       </ul>
     </div>
   </div>
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">بودكاست ذوي الإعاقة</a>
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item"><a href="#episodes" class="nav-link">الحلقات</a></li>
+      <li class="nav-item"><a href="#stories" class="nav-link">قصص المجتمع</a></li>
+      <li class="nav-item"><a href="#resources" class="nav-link">الموارد</a></li>
+      <li class="nav-item"><a href="#partners" class="nav-link">الشراكات</a></li>
+      <li class="nav-item"><a href="team.html" class="nav-link">فريق العمل</a></li>
+<li class="nav-item"><a href="#contact" class="nav-link">تواصل معنا</a></li>
+    </ul>
+  </div>
 </nav>
-
 
 <section class="hero">
   <img src="logo.png" alt="شعار بودكاست" />
@@ -182,31 +192,27 @@
   </section>
 
 
-<section id="team" class="mt-5">
-  <h2 class="section-title">👥 فريق العمل</h2>
-  <div class="row text-center">
-    <div class="col-md-4">
-      <div class="card p-3">
-        <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mb-2" alt="عضو الفريق" style="width: 120px; height: 120px; object-fit: cover;">
-        <h5 class="mb-1">عبدالله الحسين</h5>
-        <p class="text-muted small mb-0">المنتج التنفيذي</p>
-      </div>
+<section id="suggest" class="mt-5">
+  <h2 class="section-title">💡 شاركنا اقتراحك</h2>
+  <form class="bg-white p-4 rounded shadow-sm">
+    <div class="mb-3">
+      <label class="form-label">اسمك الكامل</label>
+      <input type="text" class="form-control" placeholder="مثال: نورة عبدالله">
     </div>
-    <div class="col-md-4">
-      <div class="card p-3">
-        <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mb-2" alt="عضو الفريق" style="width: 120px; height: 120px; object-fit: cover;">
-        <h5 class="mb-1">ريم الصالح</h5>
-        <p class="text-muted small mb-0">الإعداد والتنسيق</p>
-      </div>
+    <div class="mb-3">
+      <label class="form-label">ضيف تقترحه</label>
+      <input type="text" class="form-control" placeholder="اسم الضيف المقترح">
     </div>
-    <div class="col-md-4">
-      <div class="card p-3">
-        <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mb-2" alt="عضو الفريق" style="width: 120px; height: 120px; object-fit: cover;">
-        <h5 class="mb-1">خالد العتيبي</h5>
-        <p class="text-muted small mb-0">هندسة الصوت والنشر</p>
-      </div>
+    <div class="mb-3">
+      <label class="form-label">محور أو موضوع تود مناقشته</label>
+      <textarea class="form-control" rows="3" placeholder="مثل: فرص التعليم العالي، تحديات سوق العمل..."></textarea>
     </div>
-  </div>
+    <div class="mb-3">
+      <label class="form-label">بريدك الإلكتروني (اختياري)</label>
+      <input type="email" class="form-control" placeholder="example@email.com">
+    </div>
+    <button class="btn btn-main w-100">📨 إرسال الاقتراح</button>
+  </form>
 </section>
 
 </main>
