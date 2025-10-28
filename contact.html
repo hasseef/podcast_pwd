@@ -12,7 +12,44 @@
     footer { background: #3f3a3f; color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; }
     .pricing-table th, .pricing-table td { border: 1px solid #ddd; padding: 0.75rem; text-align: center; }
     .pricing-table th { background-color: #714984; color: white; }
-  </style>
+  
+h1, h2, h3 {
+  font-weight: 700;
+  color: #523663;
+  line-height: 1.5;
+}
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #3f3a3f;
+}
+
+
+button, .btn-primary, .btn-success, .btn {
+  background-color: #714984;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+button:hover, .btn:hover {
+  background-color: #523663;
+  transform: translateY(-2px);
+}
+.card, .member-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card:hover, .member-card:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+
+</style>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ once: true });</script>
+
 </head>
 <body>
 
@@ -23,7 +60,7 @@
 
 <main class="container py-5">
 
-  <section class="mb-5">
+  <section data-aos="fade-up" data-aos-duration="1000" class="mb-5">
     <h2 class="h4 mb-3 text-[#523663]">💼 باقات الرعاية</h2>
     <div class="table-responsive">
       <table class="table pricing-table">
@@ -56,7 +93,7 @@
     <p class="mt-3 text-muted">ملاحظة: يمكن تخصيص مدة الرعاية حسب احتياج الجهة (رعاية حلقة، موسم، أو سنة كاملة)</p>
   </section>
 
-  <section class="mb-5">
+  <section data-aos="fade-up" data-aos-duration="1000" class="mb-5">
     <h2 class="h4 mb-3 text-[#523663]">📨 نموذج التواصل</h2>
     <form action="thankyou.html" method="get" class="bg-white p-4 rounded shadow-sm">
       <div class="mb-3">
@@ -76,7 +113,7 @@
   </section>
 
 
-<section class="mb-5">
+<section data-aos="fade-up" data-aos-duration="1000" class="mb-5">
   <h2 class="h4 mb-3 text-[#523663]">💡 اقترح ضيفًا أو محورًا</h2>
   <form action="thankyou.html" method="get" class="bg-white p-4 rounded shadow-sm">
     <div class="mb-3">

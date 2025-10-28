@@ -2,7 +2,39 @@
 <html lang="ar" dir="rtl">
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
-  <style>body { font-family: 'Cairo', sans-serif; font-family: "Cairo", sans-serif; }</style>
+  <style>body { font-family: 'Cairo', sans-serif; font-family: "Cairo", sans-serif; }
+h1, h2, h3 {
+  font-weight: 700;
+  color: #523663;
+  line-height: 1.5;
+}
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #3f3a3f;
+}
+
+
+button, .btn-primary, .btn-success, .btn {
+  background-color: #714984;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+button:hover, .btn:hover {
+  background-color: #523663;
+  transform: translateY(-2px);
+}
+.card, .member-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card:hover, .member-card:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+
+</style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>بودكاست ذوي الإعاقة</title>
@@ -60,12 +92,49 @@
       text-align: center;
       padding: 2rem 1rem;
     }
-  </style>
+  
+h1, h2, h3 {
+  font-weight: 700;
+  color: #523663;
+  line-height: 1.5;
+}
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #3f3a3f;
+}
+
+
+button, .btn-primary, .btn-success, .btn {
+  background-color: #714984;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+button:hover, .btn:hover {
+  background-color: #523663;
+  transform: translateY(-2px);
+}
+.card, .member-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card:hover, .member-card:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+
+</style>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ once: true });</script>
+
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg sticky-top shadow">
-  <div class="container">
+  <div class="container" data-aos="fade-up" data-aos-duration="1000"">
     <a class="navbar-brand fw-bold" href="#">بودكاست ذوي الإعاقة</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -85,7 +154,7 @@
   
 </nav>
 
-<section class="hero">
+<section data-aos="fade-up" data-aos-duration="1000" class="hero">
   <img src="logo.png" alt="شعار بودكاست" />
   <h1 class="display-5 fw-bold">نُعبر لنُغير</h1>
   <p class="lead">منصة صوتية تثقيفية وإنسانية تعزز التمكين والوعي بقضايا ذوي الإعاقة</p>
@@ -94,9 +163,9 @@
 
 <main class="container py-5">
 
-  <section id="episodes">
+  <section data-aos="fade-up" data-aos-duration="1000" id="episodes">
     <h2 class="section-title">🎧 الحلقات</h2>
-    <div class="row g-4">
+    <div class="row" data-aos="fade-up" data-aos-duration="1000" g-4">
       <div class="col-md-6">
         <div class="episode-card">
           <h5>التعليم الشامل</h5>
@@ -120,7 +189,7 @@
     </div>
   </section>
 
-  <section id="stories" class="mt-5">
+  <section data-aos="fade-up" data-aos-duration="1000" id="stories" class="mt-5">
     <h2 class="section-title">🌟 قصص المجتمع</h2>
     <div class="testimonial">
       <p>“بعد استماعي للبودكاست، بدأت أؤمن أن صوتي له مكان وقيمة.”</p>
@@ -128,9 +197,9 @@
     </div>
   </section>
 
-  <section id="resources" class="mt-5">
+  <section data-aos="fade-up" data-aos-duration="1000" id="resources" class="mt-5">
     <h2 class="section-title">📚 الموارد والخدمات</h2>
-    <div class="row g-4">
+    <div class="row" data-aos="fade-up" data-aos-duration="1000" g-4">
       <div class="col-md-4">
         <div class="feature-box">
           <h6>جهات الدعم</h6>
@@ -152,7 +221,7 @@
     </div>
   </section>
 
-  <section id="partners" class="mt-5">
+  <section data-aos="fade-up" data-aos-duration="1000" id="partners" class="mt-5">
     <h2 class="section-title">🤝 الشراكات والرعاية</h2>
     <div class="partner-box">
       <p>ندعو الجهات للمساهمة في تمكين الصوت والإبداع من خلال رعاية حلقاتنا أو الدخول في شراكات مؤثرة.</p>
@@ -165,7 +234,7 @@
     </div>
   </section>
 
-  <section id="contact" class="mt-5">
+  <section data-aos="fade-up" data-aos-duration="1000" id="contact" class="mt-5">
     <h2 class="section-title">📬 تواصل معنا</h2>
     <form class="bg-white p-4 rounded shadow-sm">
       <div class="mb-3">
@@ -192,7 +261,7 @@
 </div>
 
 
-<section id="about" class="my-5">
+<section data-aos="fade-up" data-aos-duration="1000" id="about" class="my-5">
   <h2 class="h4 text-[#523663] mb-3">📖 من نحن</h2>
   <p class="bg-white p-3 rounded shadow-sm">
     بودكاست ذوي الإعاقة هو مشروع إعلامي توعوي يعزز الوعي المجتمعي والتواصل الفعال حول قضايا وتمكين الأشخاص ذوي الإعاقة، من خلال محتوى صوتي احترافي ونقاشات مع الجهات المعنية والخبراء.
@@ -200,7 +269,7 @@
 </section>
 
 
-<section id="team-mini" class="my-5">
+<section data-aos="fade-up" data-aos-duration="1000" id="team-mini" class="my-5">
   <h2 class="h4 text-[#523663] mb-3">👥 فريق البودكاست</h2>
   <p class="bg-white p-3 rounded shadow-sm">
     يقود البودكاست فريق متخصص يضم الأستاذة <strong>سحر العنيزي</strong> كمقدمة، وطاقمًا إداريًا وإنتاجيًا محترفًا.
@@ -210,7 +279,7 @@
 </section>
 
 
-<section class="my-5">
+<section data-aos="fade-up" data-aos-duration="1000" class="my-5">
   <h2 class="h4 text-[#523663] mb-3">💡 اقترح ضيفًا أو محورًا</h2>
   <form action="thankyou.html" method="get" class="bg-white p-4 rounded shadow-sm">
     <div class="mb-3">
