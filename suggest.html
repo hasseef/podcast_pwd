@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>اقترح ضيفًا أو محورًا | بودكاست ذوي الإعاقة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Cairo', sans-serif;
+      font-family: 'Cairo', sans-serif;
+      background: #f9f9f9;
+      color: #3f3a3f;
+    }
+    header {
+      background: linear-gradient(to left, #714984, #523663);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .footer {
+      background: #3f3a3f;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+    button {
+      background-color: #714984;
+      border: none;
+    }
+  
+h1, h2, h3 {
+  font-weight: 700;
+  color: #523663;
+  line-height: 1.5;
+}
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #3f3a3f;
+}
+
+
+button, .btn-primary, .btn-success, .btn {
+  background-color: #714984;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+button:hover, .btn:hover {
+  background-color: #523663;
+  transform: translateY(-2px);
+}
+.card, .member-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card:hover, .member-card:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+
+</style>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ once: true });</script>
+
+</head>
+<body>
+
+<header>
+  <h1 class="fw-bold">📢 اقترح ضيفًا أو محورًا</h1>
+  <p>نرحب بمقترحاتكم التي تثري محتوى البودكاست وتوسع أثره المجتمعي.</p>
+</header>
+
+<main class="container bg-white shadow rounded">
+  <form method="POST" action="mailto:podcast_pwd@talbiya.sa" enctype="text/plain">
+    <div class="mb-3">
+      <label class="form-label">اسمك الكامل</label>
+      <input type="text" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">البريد الإلكتروني (اختياري)</label>
+      <input type="email" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">هل تود اقتراح:</label>
+      <select class="form-select" required>
+        <option value="">-- اختر --</option>
+        <option>ضيف</option>
+        <option>محور حلقة</option>
+        <option>كلاهما</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">تفاصيل الاقتراح</label>
+      <textarea class="form-control" rows="5" placeholder="اكتب اسم الضيف، أو المحور المقترح، وأسباب ترشيحك" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary w-100 text-white">إرسال الاقتراح</button>
+  </form>
+</main>
+
+<footer class="footer">
+  © 2025 بودكاست ذوي الإعاقة – جميع الحقوق محفوظة
+</footer>
+
+</body>
+</html>
