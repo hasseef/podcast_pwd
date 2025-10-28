@@ -7,7 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
   <style>
-    body {
+    body { font-family: 'Cairo', sans-serif;
       font-family: 'Cairo', sans-serif;
       background: #f9f9f9;
       color: #3f3a3f;
@@ -34,7 +34,44 @@
       background-color: #714984;
       border: none;
     }
-  </style>
+  
+h1, h2, h3 {
+  font-weight: 700;
+  color: #523663;
+  line-height: 1.5;
+}
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #3f3a3f;
+}
+
+
+button, .btn-primary, .btn-success, .btn {
+  background-color: #714984;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+button:hover, .btn:hover {
+  background-color: #523663;
+  transform: translateY(-2px);
+}
+.card, .member-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card:hover, .member-card:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+
+</style>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ once: true });</script>
+
 </head>
 <body>
 
