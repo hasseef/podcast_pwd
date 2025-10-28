@@ -18,13 +18,6 @@
       padding: 3rem 1rem;
       text-align: center;
     }
-    .hero h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-    }
-    .hero p {
-      font-size: 1.1rem;
-    }
     .member-card {
       background: white;
       border-radius: 1rem;
@@ -32,11 +25,9 @@
       text-align: center;
       box-shadow: 0 0 12px rgba(0,0,0,0.05);
       transition: 0.3s;
-      position: relative;
     }
     .member-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     }
     .member-img {
       width: 110px;
@@ -68,23 +59,27 @@
       border-radius: 1rem;
       text-align: center;
     }
-    .join-box h3 {
-      color: #523663;
-      margin-bottom: 1rem;
-    }
     .btn-primary {
       background: #714984;
       border: none;
     }
-    .emoji {
-      font-size: 1.3rem;
+    #joinForm {
+      display: none;
+      text-align: right;
+      margin-top: 2rem;
     }
   </style>
+  <script>
+    function toggleForm() {
+      var form = document.getElementById("joinForm");
+      form.style.display = form.style.display === "none" ? "block" : "none";
+    }
+  </script>
 </head>
 <body>
 
 <header class="hero">
-  <h1>👥 فريق بودكاست ذوي الإعاقة</h1>
+  <h1 class="fw-bold text-white">فريق بودكاست ذوي الإعاقة</h1>
   <p>نحن خلف الميكروفون والكاميرا، نروي قصص التحدي والإلهام</p>
 </header>
 
@@ -97,7 +92,6 @@
         <div class="role">🎙️ مقدمة البودكاست</div>
       </div>
     </div>
-
     <div class="col-md-3 col-sm-6">
       <div class="member-card">
         <img src="https://via.placeholder.com/150" class="member-img">
@@ -105,7 +99,6 @@
         <div class="role">🧠 المنتج التنفيذي</div>
       </div>
     </div>
-
     <div class="col-md-3 col-sm-6">
       <div class="member-card">
         <img src="https://via.placeholder.com/150" class="member-img">
@@ -113,7 +106,6 @@
         <div class="role">📋 الإعداد والتنسيق</div>
       </div>
     </div>
-
     <div class="col-md-3 col-sm-6">
       <div class="member-card">
         <img src="https://via.placeholder.com/150" class="member-img">
@@ -125,8 +117,28 @@
 
   <div class="mt-5 join-box">
     <h3>هل ترغب بالانضمام لفريقنا؟</h3>
-    <p>إذا كان لديك الشغف بالتأثير الإيجابي، يسعدنا استقبال طلبك للانضمام.</p>
-    <a href="contact.html" class="btn btn-primary mt-2">قدّم طلب تعاون</a>
+    <p>إذا كان لديك الشغف بالتأثير الإيجابي، يسعدنا استقبال طلبك.</p>
+    <button class="btn btn-primary mt-2" onclick="toggleForm()">📩 طلب الانضمام</button>
+
+    <form id="joinForm" class="text-start mt-4" method="POST" action="mailto:podcast_pwd@talbiya.sa" enctype="text/plain">
+      <div class="mb-3">
+        <label class="form-label">الاسم الكامل</label>
+        <input type="text" class="form-control" placeholder="مثال: محمد القحطاني" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">التخصص أو المهارة</label>
+        <input type="text" class="form-control" placeholder="مثال: مونتاج، إعداد، نشر...">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">رابط التواصل أو الحساب</label>
+        <input type="url" class="form-control" placeholder="مثال: https://x.com/username">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">رسالة تعريفية</label>
+        <textarea class="form-control" rows="4" placeholder="نبذة عنك ولماذا ترغب بالمشاركة..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-success w-100">إرسال الطلب</button>
+    </form>
   </div>
 </main>
 
