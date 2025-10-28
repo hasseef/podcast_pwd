@@ -1,257 +1,186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
-  <style>body { font-family: "Cairo", sans-serif; }</style>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>بودكاست ذوي الإعاقة</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-  <style>
-    :root {
-      --main-color: #714984;
-      --dark-color: #523663;
-      --accent-color: #bc9c5b;
-      --text-color: #3f3a3f;
-      --bg-color: #f4f4f4;
-    }
-    body {
-      font-family: 'Cairo', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      scroll-behavior: smooth;
-    }
-    .navbar {
-      background-color: var(--main-color);
-    }
-    .navbar .nav-link, .navbar-brand {
-      color: #fff !important;
-    }
-    .hero {
-      background: linear-gradient(to left, var(--main-color), var(--dark-color));
-      color: white;
-      padding: 5rem 1rem;
-      text-align: center;
-    }
-    .hero img {
-      max-height: 100px;
-      margin-bottom: 1rem;
-    }
-    .section-title {
-      border-right: 5px solid var(--accent-color);
-      padding-right: 12px;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-    }
-    .feature-box, .episode-card, .testimonial, .partner-box {
-      background: #fff;
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
-      margin-bottom: 1.5rem;
-    }
-    .btn-main {
-      background-color: var(--accent-color);
-      color: white;
-    }
-    footer {
-      background-color: var(--text-color);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بودكاست ذوي الإعاقة</title>
+<style>
+  :root{--max:1100px;--gap:16px;--radius:14px;--line:#e9ecef;--muted:#666;--ink:#111;--card:#fff;--bg:#fafafa}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Cairo','Noto Sans Arabic',sans-serif;line-height:1.6}
+  .container{max-width:var(--max);margin:0 auto;padding:20px}
+  h1,h2,h3{margin:0 0 12px 0}
+  p{margin:0 0 10px 0}
+  .btn{display:inline-block;border:1px solid var(--line);padding:10px 14px;border-radius:12px;text-decoration:none}
+  /* Social icons -> white */
+  .social a i, .social i, .social a svg, .social svg{color:#fff !important; fill:#fff !important;}
+  .social a img{filter:brightness(0) invert(1);}
+  /* Hero */
+  .hero{padding:40px 0}
+  .hero .lead{color:var(--muted)}
+  .slogan{font-weight:600}
+  /* Promo */
+  .promo-section{padding:48px 0}
+  .promo-video video{width:100%;height:auto;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+  /* Stats */
+  .stats{padding:48px 0}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap)}
+  @media (max-width:1024px){ .grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .grid{grid-template-columns:1fr;} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+  .metric{font-size:28px;font-weight:800}
+  .muted{color:var(--muted);font-size:.95rem}
+  /* Footer */
+  footer{background:#111;color:#fff;margin-top:28px}
+  footer .container{display:grid;gap:10px}
+  .rights{opacity:.9}
+  /* Accessibility */
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+</style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg sticky-top shadow">
+<header class="site-header">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#">بودكاست ذوي الإعاقة</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      
-<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-  <li class="nav-item"><a href="#about" class="nav-link">من نحن</a></li>
-  <li class="nav-item"><a href="team.html" class="nav-link">فريق العمل</a></li>
-  <li class="nav-item"><a href="partners.html" class="nav-link">الرعاة</a></li>
-  <li class="nav-item"><a href="partners-logos.html" class="nav-link">شركاؤنا</a></li>
-  <li class="nav-item"><a href="contact.html" class="nav-link">تواصل معنا</a></li>
-</ul>
-
+    <nav class="nav">
+      <!-- أضف عناصر قائمتك الحالية هنا إن رغبت -->
+    </nav>
+    <div class="social" aria-label="حسابات التواصل">
+      <!-- أمثلة (اختياري): <a href="#"><i class="fa-brands fa-x-twitter"></i></a> -->
     </div>
   </div>
-  
-</nav>
+</header>
 
-<section class="hero">
-  <img src="logo.png" alt="شعار بودكاست" />
-  <h1 class="display-5 fw-bold">نُعبر لنُغير</h1>
-  <p class="lead">منصة صوتية تثقيفية وإنسانية تعزز التمكين والوعي بقضايا ذوي الإعاقة</p>
-  <a href="#episodes" class="btn btn-main mt-3 px-4">ابدأ الاستماع</a>
-</section>
+<main id="main">
+  <!-- HERO -->
+  <section class="hero container">
+    <h1>بودكاست ذوي الإعاقة</h1>
+    <p class="lead">
+      منصة إعلامية إنسانية تسلط الضوء على جوانب حياة الأشخاص ذوي الإعاقة،
+      وتتناول التحديات والفرص، وتعمل على تعزيز التكامل بين الجهات والأفراد
+      لإيجاد الحلول وتحسين جودة الحياة عبر استضافة الخبراء وأصحاب المبادرات.
+    </p>
+    <p>
+      <a class="btn" href="episodes.html" aria-label="ابدأ بمشاهدة حلقات البودكاست">ابدأ بالمشاهدة</a>
+      <a class="btn" href="sponsorships.html" aria-label="انتقال إلى صفحة الرعايات">الرعايات</a>
+    </p>
+    <p class="slogan">نُضيء الطريق للتكامل</p>
+  </section>
 
-<main class="container py-5">
+  <!-- ABOUT -->
+  <section id="about" class="container">
+    <h2>من نحن</h2>
+    <p>
+      فريق إعلامي متخصص يقدم محتوى احترافيًا يساهم في رفع الوعي والتكامل التنموي
+      عبر قصص وتجارب وحوارات مع خبراء وأصحاب مبادرات تعنى بذوي الإعاقة.
+    </p>
+  </section>
 
-  <section id="episodes">
-    <h2 class="section-title">🎧 الحلقات</h2>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="episode-card">
-          <h5>التعليم الشامل</h5>
-          <p>مع د. محمد القحطاني</p>
-          <div class="ratio ratio-16x9 mb-2">
-            <iframe src="https://www.youtube.com/embed/sample1" allowfullscreen></iframe>
-          </div>
-          <a href="#" class="btn btn-main w-100">استمع الآن</a>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="episode-card">
-          <h5>الحقوق القانونية</h5>
-          <p>مع أ. سارة العتيبي</p>
-          <div class="ratio ratio-16x9 mb-2">
-            <iframe src="https://www.youtube.com/embed/sample2" allowfullscreen></iframe>
-          </div>
-          <a href="#" class="btn btn-main w-100">استمع الآن</a>
-        </div>
-      </div>
+  <!-- PROMO VIDEO -->
+  <section id="promo" class="promo-section container">
+    <div class="promo-head">
+      <h2>كواليس الانطلاق | برومو الاستعدادات (50 ثانية)</h2>
+      <p class="muted">لمحات سريعة من الاجتماعات والتجهيزات والمعدات، ومشاركة مبادرين من الجنسين ومنهم أشخاص من ذوي الإعاقة.</p>
+    </div>
+    <div class="promo-video">
+      <video controls playsinline preload="metadata" poster="assets/img/promo-poster.jpg">
+        <source src="assets/video/istidadat.mp4" type="video/mp4">
+        متصفحك لا يدعم تشغيل الفيديو. يمكنك مشاهدة المقطع في صفحة مستقلة من <a href="الاستعدادات.html">هنا</a>.
+      </video>
     </div>
   </section>
 
-  <section id="stories" class="mt-5">
-    <h2 class="section-title">🌟 قصص المجتمع</h2>
-    <div class="testimonial">
-      <p>“بعد استماعي للبودكاست، بدأت أؤمن أن صوتي له مكان وقيمة.”</p>
-      <small class="text-muted">- مها، جدة</small>
-    </div>
+  <!-- TEAM -->
+  <section id="team" class="container">
+    <h2>فريق العمل</h2>
+    <p>
+      يضم البودكاست فريقًا إعلاميًا متخصصًا يجمع بين الخبرة في الإنتاج المرئي والإعداد الإعلامي والتنسيق الميداني،
+      يعمل بروح واحدة على تقديم محتوى احترافي يعكس صوت ذوي الإعاقة ويُسهم في دعم الوعي المجتمعي والتكامل التنموي.
+    </p>
   </section>
 
-  <section id="resources" class="mt-5">
-    <h2 class="section-title">📚 الموارد والخدمات</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="feature-box">
-          <h6>جهات الدعم</h6>
-          <p>دليل تفاعلي لجهات حكومية وخاصة تقدم خدمات لذوي الإعاقة.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="feature-box">
-          <h6>أدوات مساعدة</h6>
-          <p>روابط أدوات رقمية مجانية لتحسين الوصول للمحتوى.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="feature-box">
-          <h6>مبادرات ملهمة</h6>
-          <p>قصص مشاريع ومجتمعات تقود التغيير.</p>
-        </div>
-      </div>
+  <!-- STATS -->
+  <section id="stats" class="stats container" aria-labelledby="kpi-title">
+    <h2 id="kpi-title">الإحصائيات</h2>
+    <p class="muted">نظرة عامة على الأداء — متجاوبة للجوال والكمبيوتر.</p>
+    <div class="grid" role="list">
+      <article class="card" aria-label="عدد الحلقات" role="listitem">
+        <h3 class="muted">عدد الحلقات</h3>
+        <div id="m-episodes" class="metric">0</div>
+      </article>
+      <article class="card" aria-label="عدد الضيوف" role="listitem">
+        <h3 class="muted">عدد الضيوف</h3>
+        <div id="m-guests" class="metric">0</div>
+      </article>
+      <article class="card" aria-label="إجمالي المشاهدات" role="listitem">
+        <h3 class="muted">إجمالي المشاهدات</h3>
+        <div id="m-views" class="metric">0</div>
+      </article>
+      <article class="card" aria-label="معدل التفاعل" role="listitem">
+        <h3 class="muted">معدل التفاعل</h3>
+        <div id="m-engagement" class="metric">0%</div>
+      </article>
+    </div>
+
+    <div style="margin-top:18px;">
+      <table style="width:100%;border-collapse:collapse">
+        <thead>
+          <tr style="background:#f8f9fa">
+            <th style="border:1px solid var(--line);padding:10px 12px;text-align:right">الحلقة</th>
+            <th style="border:1px solid var(--line);padding:10px 12px;text-align:right">العنوان</th>
+            <th style="border:1px solid var(--line);padding:10px 12px;text-align:right">الضيف/الموضوع</th>
+            <th style="border:1px solid var(--line);padding:10px 12px;text-align:right">المدة</th>
+            <th style="border:1px solid var(--line);padding:10px 12px;text-align:right">المشاهدات</th>
+          </tr>
+        </thead>
+        <tbody id="episodes-rows"></tbody>
+      </table>
     </div>
   </section>
-
-  <section id="partners" class="mt-5">
-    <h2 class="section-title">🤝 الشراكات والرعاية</h2>
-    <div class="partner-box">
-      <p>ندعو الجهات للمساهمة في تمكين الصوت والإبداع من خلال رعاية حلقاتنا أو الدخول في شراكات مؤثرة.</p>
-      <ul>
-        <li>ذكر الراعي داخل الحلقات</li>
-        <li>ظهور الشعار في الموقع والنشرات</li>
-        <li>فرص حملات ترويجية مشتركة</li>
-      </ul>
-      <a href="#contact" class="btn btn-outline-secondary mt-2">قدّم شراكتك الآن</a>
-    </div>
-  </section>
-
-  <section id="contact" class="mt-5">
-    <h2 class="section-title">📬 تواصل معنا</h2>
-    <form class="bg-white p-4 rounded shadow-sm">
-      <div class="mb-3">
-        <label class="form-label">الاسم الكامل</label>
-        <input type="text" class="form-control" placeholder="اسمك">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">البريد الإلكتروني</label>
-        <input type="email" class="form-control" placeholder="example@email.com">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">رسالتك</label>
-        <textarea class="form-control" rows="4" placeholder="أخبرنا كيف يمكننا خدمتك أو التعاون معك"></textarea>
-      </div>
-      <button class="btn btn-main w-100">إرسال</button>
-    </form>
-  </section>
-
-
-<div class="text-center my-5">
-  <a href="partners.html" class="btn btn-lg" style="background-color:#bc9c5b; color:white; padding: 0.75rem 2rem; font-weight: bold;">
-    🎯 قدم طلب رعاية
-  </a>
-</div>
-
-
-<section id="about" class="my-5">
-  <h2 class="h4 text-[#523663] mb-3">📖 من نحن</h2>
-  <p class="bg-white p-3 rounded shadow-sm">
-    بودكاست ذوي الإعاقة هو مشروع إعلامي توعوي يعزز الوعي المجتمعي والتواصل الفعال حول قضايا وتمكين الأشخاص ذوي الإعاقة، من خلال محتوى صوتي احترافي ونقاشات مع الجهات المعنية والخبراء.
-  </p>
-</section>
-
-
-<section id="team-mini" class="my-5">
-  <h2 class="h4 text-[#523663] mb-3">👥 فريق البودكاست</h2>
-  <p class="bg-white p-3 rounded shadow-sm">
-    يقود البودكاست فريق متخصص يضم الأستاذة <strong>سحر العنيزي</strong> كمقدمة، وطاقمًا إداريًا وإنتاجيًا محترفًا.
-    <br>
-    <a href="team.html" class="btn btn-sm mt-2" style="background-color:#bc9c5b; color:white;">عرض الفريق بالكامل</a>
-  </p>
-</section>
-
-
-<section class="my-5">
-  <h2 class="h4 text-[#523663] mb-3">💡 اقترح ضيفًا أو محورًا</h2>
-  <form action="thankyou.html" method="get" class="bg-white p-4 rounded shadow-sm">
-    <div class="mb-3">
-      <label class="form-label">اسمك الكامل</label>
-      <input type="text" class="form-control" placeholder="مثال: نورة العبدالله" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">اسم الضيف المقترح (اختياري)</label>
-      <input type="text" class="form-control" placeholder="مثال: د. عبدالله القحطاني">
-    </div>
-    <div class="mb-3">
-      <label class="form-label">محور أو موضوع تقترحه</label>
-      <textarea class="form-control" rows="3" placeholder="مثل: التوظيف، التعليم، سهولة الوصول..." required></textarea>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">البريد الإلكتروني (اختياري)</label>
-      <input type="email" class="form-control" placeholder="example@email.com">
-    </div>
-    <button class="btn w-100" style="background-color:#714984; color:white;">إرسال الاقتراح</button>
-  </form>
-</section>
-
 </main>
 
 <footer>
-  <p>© 2025 بودكاست ذوي الإعاقة - تصميم وهوية احترافية لجميع الفئات</p>
-
-<div class="d-flex justify-content-center gap-3 mt-3">
-  <a href="https://www.instagram.com/podcastpwd?igsh=NDJ5YjR1dno2cGQ0" target="_blank" title="Instagram">
-    <img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram">
-  </a>
-  <a href="https://www.tiktok.com/@podcastpwd?_t=ZS-90sKbbuycTo&_r=1" target="_blank" title="TikTok">
-    <img src="https://cdn-icons-png.flaticon.com/24/3046/3046121.png" alt="TikTok">
-  </a>
-  <a href="https://x.com/podcastpwd?s=11&t=dWAyG2J-XOKhx8AE0ie55A" target="_blank" title="X">
-    <img src="https://cdn-icons-png.flaticon.com/24/5968/5968830.png" alt="X">
-  </a>
-</div>
-
+  <div class="container">
+    <p class="rights">جميع الحقوق محفوظة لمبادرة تلبية © 2025</p>
+  </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const metrics = { episodes: 24, guests: 22, views: 185000, engagement: 7.4 };
+const episodes = [
+  {no:1, title:'قصة إلهام', guest:'ضيف مُلهم', dur:'28:00', views:12400},
+  {no:2, title:'التقنية المساعدة', guest:'خبير تقني', dur:'32:15', views:17600},
+  {no:3, title:'الدمج في بيئة العمل', guest:'متخصص موارد بشرية', dur:'26:40', views:9800}
+];
+function animateValue(id, end, suffix=''){
+  const el=document.getElementById(id); if(!el) return;
+  const duration=800, start=0, startTime=performance.now();
+  function tick(now){
+    const p=Math.min((now-startTime)/duration,1);
+    el.textContent = Math.round(start + (end-start)*p).toLocaleString('ar-SA') + suffix;
+    if(p<1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+function format(n){ return n.toLocaleString('ar-SA'); }
+document.addEventListener('DOMContentLoaded', ()=>{
+  animateValue('m-episodes', metrics.episodes);
+  animateValue('m-guests', metrics.guests);
+  animateValue('m-views', metrics.views);
+  const e = document.getElementById('m-engagement'); if(e) e.textContent = metrics.engagement + '%';
+  const tbody = document.getElementById('episodes-rows');
+  if(tbody){
+    episodes.forEach(ep=>{
+      const tr=document.createElement('tr');
+      tr.innerHTML = '<td style=\"border:1px solid var(--line);padding:10px 12px;\">'+ep.no+'</td>' +
+                     '<td style=\"border:1px solid var(--line);padding:10px 12px;\">'+ep.title+'</td>' +
+                     '<td style=\"border:1px solid var(--line);padding:10px 12px;\">'+ep.guest+'</td>' +
+                     '<td style=\"border:1px solid var(--line);padding:10px 12px;\">'+ep.dur+'</td>' +
+                     '<td style=\"border:1px solid var(--line);padding:10px 12px;\">'+format(ep.views)+'</td>';
+      tbody.appendChild(tr);
+    });
+  }
+});
+</script>
+
 </body>
 </html>
