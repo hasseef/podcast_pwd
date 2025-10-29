@@ -6,52 +6,58 @@
 <title>بودكاست ذوي الإعاقة</title>
 <style>
   :root{--max:1100px;--gap:16px;--radius:14px;--line:#e9ecef;--muted:#666;--ink:#111;--card:#fff;--bg:#fafafa}
+  *{box-sizing:border-box}
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Cairo','Noto Sans Arabic',sans-serif;line-height:1.6}
+  a{text-decoration:none;color:inherit}
   .container{max-width:var(--max);margin:0 auto;padding:20px}
   h1,h2,h3{margin:0 0 12px 0}
   p{margin:0 0 10px 0}
-  .btn{display:inline-block;border:1px solid var(--line);padding:10px 14px;border-radius:12px;text-decoration:none}
-  /* Social icons -> white */
-  .social a i, .social i, .social a svg, .social svg{color:#fff !important; fill:#fff !important;}
-  .social a img{filter:brightness(0) invert(1);}
-  /* Hero */
+  .btn{display:inline-block;border:1px solid var(--line);padding:10px 14px;border-radius:12px}
+  .btn.primary{background:#111;color:#fff;border-color:#111}
+  .nav{display:flex;gap:12px;flex-wrap:wrap}
+  .nav a{padding:8px 12px;border:1px solid var(--line);border-radius:10px}
+  .nav a:hover,.nav a.active{background:#111;color:#fff;border-color:#111}
+  header.site-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
   .hero{padding:40px 0}
   .hero .lead{color:var(--muted)}
   .slogan{font-weight:600}
-  /* Promo */
-  .promo-section{padding:48px 0}
-  .promo-video video{width:100%;height:auto;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
-  /* Stats */
-  .stats{padding:48px 0}
-  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap)}
-  @media (max-width:1024px){ .grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:600px){ .grid{grid-template-columns:1fr;} }
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+  .section{padding:36px 0}
+  .grid{display:grid;gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
   .metric{font-size:28px;font-weight:800}
   .muted{color:var(--muted);font-size:.95rem}
-  /* Footer */
   footer{background:#111;color:#fff;margin-top:28px}
   footer .container{display:grid;gap:10px}
   .rights{opacity:.9}
-  /* Accessibility */
-  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  /* Team layout */
+  .team-grid{display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:center}
+  .team-photo{border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+  .team-photo img{display:block;width:100%;height:auto}
+  @media (max-width:800px){ .team-grid{grid-template-columns:1fr} }
+  /* Tables */
+  table{width:100%;border-collapse:collapse}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:right}
+  thead tr{background:#f8f9fa}
+  /* Forms */
+  input,textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  label{display:block;margin:10px 0 6px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:700px){ .row{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
-
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <!-- أضف عناصر قائمتك الحالية هنا إن رغبت -->
+      <a href="index.html" class="active">الرئيسية</a>
+      <a href="stats.html">الإحصائيات</a>
+      <a href="about.html">من نحن</a>
+      <a href="sponsorships.html">الرعايات</a>
+      <a href="contact.html">تواصل معنا</a>
     </nav>
-    <div class="social" aria-label="حسابات التواصل">
-      <!-- أمثلة (اختياري): <a href="#"><i class="fa-brands fa-x-twitter"></i></a> -->
-    </div>
   </div>
 </header>
-
 <main id="main">
-  <!-- HERO -->
   <section class="hero container">
     <h1>بودكاست ذوي الإعاقة</h1>
     <p class="lead">
@@ -62,12 +68,12 @@
     <p>
       <a class="btn" href="episodes.html" aria-label="ابدأ بمشاهدة حلقات البودكاست">ابدأ بالمشاهدة</a>
       <a class="btn" href="sponsorships.html" aria-label="انتقال إلى صفحة الرعايات">الرعايات</a>
+      <a class="btn primary" href="stats.html" aria-label="عرض الإحصائيات">عرض الإحصائيات</a>
     </p>
     <p class="slogan">نُضيء الطريق للتكامل</p>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="container">
+  <section id="about" class="section container">
     <h2>من نحن</h2>
     <p>
       فريق إعلامي متخصص يقدم محتوى احترافيًا يساهم في رفع الوعي والتكامل التنموي
@@ -75,112 +81,36 @@
     </p>
   </section>
 
-  <!-- PROMO VIDEO -->
-  <section id="promo" class="promo-section container">
-    <div class="promo-head">
-      <h2>كواليس الانطلاق | برومو الاستعدادات (50 ثانية)</h2>
-      <p class="muted">لمحات سريعة من الاجتماعات والتجهيزات والمعدات، ومشاركة مبادرين من الجنسين ومنهم أشخاص من ذوي الإعاقة.</p>
-    </div>
-    <div class="promo-video">
-      <video controls playsinline preload="metadata" poster="assets/img/promo-poster.jpg">
-        <source src="assets/video/istidadat.mp4" type="video/mp4">
-        متصفحك لا يدعم تشغيل الفيديو. يمكنك مشاهدة المقطع في صفحة مستقلة من <a href="الاستعدادات.html">هنا</a>.
-      </video>
-    </div>
-  </section>
-
-  <!-- TEAM -->
-  <section id="team" class="container">
+  <section id="team" class="section container">
     <h2>فريق العمل</h2>
-    <p>
-      يضم البودكاست فريقًا إعلاميًا متخصصًا يجمع بين الخبرة في الإنتاج المرئي والإعداد الإعلامي والتنسيق الميداني،
-      يعمل بروح واحدة على تقديم محتوى احترافي يعكس صوت ذوي الإعاقة ويُسهم في دعم الوعي المجتمعي والتكامل التنموي.
-    </p>
+    <div class="team-grid">
+      <figure class="team-photo">
+        <img src="assets/img/sahar.jpeg" alt="الأستاذة سحر — مقدمة البودكاست">
+      </figure>
+      <div class="team-text">
+        <h3 style="margin-bottom:8px;">مقدمة البرنامج</h3>
+        <p>
+          يضم البودكاست فريقًا إعلاميًا متخصصًا يجمع بين الخبرة في الإنتاج المرئي والإعداد الإعلامي والتنسيق الميداني،
+          يعمل بروح واحدة على تقديم محتوى احترافي يعكس صوت ذوي الإعاقة ويُسهم في دعم الوعي المجتمعي والتكامل التنموي.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <!-- STATS -->
-  <section id="stats" class="stats container" aria-labelledby="kpi-title">
-    <h2 id="kpi-title">الإحصائيات</h2>
-    <p class="muted">نظرة عامة على الأداء — متجاوبة للجوال والكمبيوتر.</p>
-    <div class="grid" role="list">
-      <article class="card" aria-label="عدد الحلقات" role="listitem">
-        <h3 class="muted">عدد الحلقات</h3>
-        <div id="m-episodes" class="metric">0</div>
-      </article>
-      <article class="card" aria-label="عدد الضيوف" role="listitem">
-        <h3 class="muted">عدد الضيوف</h3>
-        <div id="m-guests" class="metric">0</div>
-      </article>
-      <article class="card" aria-label="إجمالي المشاهدات" role="listitem">
-        <h3 class="muted">إجمالي المشاهدات</h3>
-        <div id="m-views" class="metric">0</div>
-      </article>
-      <article class="card" aria-label="معدل التفاعل" role="listitem">
-        <h3 class="muted">معدل التفاعل</h3>
-        <div id="m-engagement" class="metric">0%</div>
-      </article>
+  <section id="stats-teaser" class="section container">
+    <h2>إحصائيات الإعاقة — لمحة</h2>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr)">
+      <article class="card"><h3 class="muted">إجمالي الأشخاص</h3><div class="metric">2,036,966</div></article>
+      <article class="card"><h3 class="muted">النسبة من السكان</h3><div class="metric">7.1%</div></article>
+      <article class="card"><h3 class="muted">سنة التقرير</h3><div class="metric">2017</div></article>
     </div>
-
-    <div style="margin-top:18px;">
-      <table style="width:100%;border-collapse:collapse">
-        <thead>
-          <tr style="background:#f8f9fa">
-            <th style="border:1px solid var(--line);padding:10px 12px;text-align:right">الحلقة</th>
-            <th style="border:1px solid var(--line);padding:10px 12px;text-align:right">العنوان</th>
-            <th style="border:1px solid var(--line);padding:10px 12px;text-align:right">الضيف/الموضوع</th>
-            <th style="border:1px solid var(--line);padding:10px 12px;text-align:right">المدة</th>
-            <th style="border:1px solid var(--line);padding:10px 12px;text-align:right">المشاهدات</th>
-          </tr>
-        </thead>
-        <tbody id="episodes-rows"></tbody>
-      </table>
-    </div>
+    <p style="margin-top:12px"><a class="btn primary" href="stats.html">عرض الإحصائيات كاملة</a></p>
   </section>
 </main>
-
 <footer>
   <div class="container">
     <p class="rights">جميع الحقوق محفوظة لمبادرة تلبية © 2025</p>
   </div>
 </footer>
-
-<script>
-const metrics = { episodes: 24, guests: 22, views: 185000, engagement: 7.4 };
-const episodes = [
-  {no:1, title:'قصة إلهام', guest:'ضيف مُلهم', dur:'28:00', views:12400},
-  {no:2, title:'التقنية المساعدة', guest:'خبير تقني', dur:'32:15', views:17600},
-  {no:3, title:'الدمج في بيئة العمل', guest:'متخصص موارد بشرية', dur:'26:40', views:9800}
-];
-function animateValue(id, end, suffix=''){
-  const el=document.getElementById(id); if(!el) return;
-  const duration=800, start=0, startTime=performance.now();
-  function tick(now){
-    const p=Math.min((now-startTime)/duration,1);
-    el.textContent = Math.round(start + (end-start)*p).toLocaleString('ar-SA') + suffix;
-    if(p<1) requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-}
-function format(n){ return n.toLocaleString('ar-SA'); }
-document.addEventListener('DOMContentLoaded', ()=>{
-  animateValue('m-episodes', metrics.episodes);
-  animateValue('m-guests', metrics.guests);
-  animateValue('m-views', metrics.views);
-  const e = document.getElementById('m-engagement'); if(e) e.textContent = metrics.engagement + '%';
-  const tbody = document.getElementById('episodes-rows');
-  if(tbody){
-    episodes.forEach(ep=>{
-      const tr=document.createElement('tr');
-      tr.innerHTML = '<td style=\"border:1px solid var(--line);padding:10px 12px;\">'+ep.no+'</td>' +
-                     '<td style=\"border:1px solid var(--line);padding:10px 12px;\">'+ep.title+'</td>' +
-                     '<td style=\"border:1px solid var(--line);padding:10px 12px;\">'+ep.guest+'</td>' +
-                     '<td style=\"border:1px solid var(--line);padding:10px 12px;\">'+ep.dur+'</td>' +
-                     '<td style=\"border:1px solid var(--line);padding:10px 12px;\">'+format(ep.views)+'</td>';
-      tbody.appendChild(tr);
-    });
-  }
-});
-</script>
-
 </body>
 </html>

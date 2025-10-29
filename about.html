@@ -1,15 +1,86 @@
-    <!doctype html><html lang="ar" dir="rtl"><head>
-    <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>من نحن | بودكاست ذوي الإعاقة</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    </head><body>
-    <script src="assets/js/header.js"></script>
-    <main id="main" class="container" style="max-width:800px;">
-  <h1>من نحن</h1>
-  <p>بودكاست مرئي على يوتيوب يركّز على قضايا وتمكين ذوي الإعاقة في السعودية.</p>
-  <p>ينتجه فريق تلبية بشراكات ممتدة مع جهات داعمة تحقيقًا لمستهدفات رؤية 2030.</p>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>من نحن | بودكاست ذوي الإعاقة</title>
+<style>
+  :root{--max:1100px;--gap:16px;--radius:14px;--line:#e9ecef;--muted:#666;--ink:#111;--card:#fff;--bg:#fafafa}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Cairo','Noto Sans Arabic',sans-serif;line-height:1.6}
+  a{text-decoration:none;color:inherit}
+  .container{max-width:var(--max);margin:0 auto;padding:20px}
+  h1,h2,h3{margin:0 0 12px 0}
+  p{margin:0 0 10px 0}
+  .btn{display:inline-block;border:1px solid var(--line);padding:10px 14px;border-radius:12px}
+  .btn.primary{background:#111;color:#fff;border-color:#111}
+  .nav{display:flex;gap:12px;flex-wrap:wrap}
+  .nav a{padding:8px 12px;border:1px solid var(--line);border-radius:10px}
+  .nav a:hover,.nav a.active{background:#111;color:#fff;border-color:#111}
+  header.site-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+  .hero{padding:40px 0}
+  .hero .lead{color:var(--muted)}
+  .slogan{font-weight:600}
+  .section{padding:36px 0}
+  .grid{display:grid;gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .metric{font-size:28px;font-weight:800}
+  .muted{color:var(--muted);font-size:.95rem}
+  footer{background:#111;color:#fff;margin-top:28px}
+  footer .container{display:grid;gap:10px}
+  .rights{opacity:.9}
+  /* Team layout */
+  .team-grid{display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:center}
+  .team-photo{border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+  .team-photo img{display:block;width:100%;height:auto}
+  @media (max-width:800px){ .team-grid{grid-template-columns:1fr} }
+  /* Tables */
+  table{width:100%;border-collapse:collapse}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:right}
+  thead tr{background:#f8f9fa}
+  /* Forms */
+  input,textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  label{display:block;margin:10px 0 6px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:700px){ .row{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="stats.html">الإحصائيات</a>
+      <a href="about.html" class="active">من نحن</a>
+      <a href="sponsorships.html">الرعايات</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <header class="section">
+    <h1>من نحن</h1>
+    <p class="muted">منصة إعلامية تهتم بجوانب حياة ذوي الإعاقة، وتسلط الضوء على التحديات والفرص، وتدعم التكامل لإيجاد حلول تُحسّن جودة الحياة.</p>
+  </header>
+
+  <section class="section">
+    <h2>رسالتنا</h2>
+    <p>رفع الوعي وتمكين الحوار المتخصص، وإبراز الحلول والمبادرات الواعدة بالشراكة مع الخبراء والجهات ذات العلاقة.</p>
+  </section>
+
+  <section class="section">
+    <h2>فريق العمل</h2>
+    <div class="team-grid">
+      <figure class="team-photo"><img src="assets/img/sahar.jpeg" alt="الأستاذة سحر — مقدمة البودكاست"></figure>
+      <div><p>يعمل الفريق بروح واحدة على إنتاج محتوى مرئي احترافي، وإعداد موضوعات عميقة، وبناء جسور مع أصحاب الحلول.</p></div>
+    </div>
+  </section>
 </main>
 
-    <script src="assets/js/footer.js"></script>
-
-</body></html>
+<footer>
+  <div class="container">
+    <p class="rights">جميع الحقوق محفوظة لمبادرة تلبية © 2025</p>
+  </div>
+</footer>
+</body>
+</html>
